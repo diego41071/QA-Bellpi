@@ -88,7 +88,9 @@ export function App() {
       <div>
         <h1>Album Star Wars</h1> <h2>Películas</h2>
         {visiblefilm && (
-          <Button onClick={() => btnFilms()}>Obtener Películas</Button>
+          <Button onClick={() => btnFilms()} className="btn-1">
+            Obtener Películas
+          </Button>
         )}
         <Grid columns={3} stackable>
           {visiblefilm &&
@@ -102,14 +104,35 @@ export function App() {
           {films?.results?.map((item, index) => {
             return (
               <Grid.Column>
-                <Card>{item.title}</Card>
+                <Card>
+                  <p>
+                    <b>Nombre:</b> {item.title}
+                  </p>
+                  <p>
+                    <b>Episodio:</b> {item.episode_id}
+                  </p>
+                  <p>
+                    <b>Introducción:</b> {item.opening_crawl}
+                  </p>
+                  <p>
+                    <b>Director:</b> {item.director}
+                  </p>
+                  <p>
+                    <b>Productor:</b> {item.producer}
+                  </p>
+                  <p>
+                    <b>Fecha de lanzamiento:</b> {item.release_date}
+                  </p>
+                </Card>
               </Grid.Column>
             );
           })}
         </Grid>
         <h2> Personajes</h2>
         {visiblepeople && (
-          <Button onClick={() => btnPeople()}>Obtener Personajes</Button>
+          <Button onClick={() => btnPeople()} className="btn-2">
+            Obtener Personajes
+          </Button>
         )}
         <Grid columns={3} stackable>
           {visiblepeople &&
@@ -209,7 +232,33 @@ export function App() {
                 {item?.results?.map((value, i) => {
                   return (
                     <Grid.Column>
-                      <Card> {value.name}</Card>
+                      <Card>
+                        <p>
+                          <b>Nombre:</b> {value.name}
+                        </p>
+                        <p>
+                          <b>Altura:</b> {value.height}
+                        </p>
+                        <p>
+                          <b>Peso:</b> {value.mass}
+                        </p>
+                        <p>
+                          <b>Color de cabello:</b> {value.hair_color}
+                        </p>
+                        <p>
+                          <b>Color de piel:</b> {value.skin_color}
+                        </p>
+                        <p>
+                          <b>Color de ojos:</b> {value.eye_color}
+                        </p>
+                        <p>
+                          <b>Año de nacimiento:</b> {value.birth_year}
+                        </p>
+                        <p>
+                          <b>Sexo:</b>
+                          {item.gender}
+                        </p>
+                      </Card>
                     </Grid.Column>
                   );
                 })}
@@ -219,7 +268,9 @@ export function App() {
         </Grid>
         <h2> Naves</h2>
         {visiblevehicle && (
-          <Button onClick={() => btnVehicles()}>Obtener Naves</Button>
+          <Button onClick={() => btnVehicles()} className="btn-3">
+            Obtener Naves
+          </Button>
         )}
         <Grid columns={3} stackable>
           {visiblevehicle &&
@@ -273,7 +324,43 @@ export function App() {
                 {item?.results?.map((value, i) => {
                   return (
                     <Grid.Column>
-                      <Card> {value.name}</Card>
+                      <Card>
+                        <p>
+                          <b>Nombre: </b>
+                          {value.name}
+                        </p>
+                        <p>
+                          <b>Modelo:</b> {value.model}
+                        </p>
+                        <p>
+                          <b>Fabricante:</b> {value.manufacturer}
+                        </p>
+                        <p>
+                          <b>Costo:</b> {value.cost_in_credits}
+                        </p>
+                        <p>
+                          <b>Largo:</b> {value.length}
+                        </p>
+                        <p>
+                          <b>Máxima velocidad:</b>
+                          {value.max_atmosphering_speed}
+                        </p>
+                        <p>
+                          <b>Tripulación:</b> {value.crew}
+                        </p>
+                        <p>
+                          <b>Pasajeros:</b> {value.passengers}
+                        </p>
+                        <p>
+                          <b>Capacidad:</b> {value.cargo_capacity}
+                        </p>
+                        <p>
+                          <b>Consumibles:</b> {value.consumables}
+                        </p>
+                        <p>
+                          <b>Clase de vehiculo:</b> {value.vehicle_class}
+                        </p>
+                      </Card>
                     </Grid.Column>
                   );
                 })}
